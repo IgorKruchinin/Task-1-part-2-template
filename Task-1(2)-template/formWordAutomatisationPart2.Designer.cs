@@ -1,6 +1,6 @@
 ﻿namespace Task_1_2__template
 {
-    partial class Form1
+    partial class formWordAutomatisationPart2
     {
         /// <summary>
         /// Required designer variable.
@@ -395,7 +395,7 @@
             this.btnPreview.UseVisualStyleBackColor = true;
             this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
-            // Form1
+            // formWordAutomatisationPart2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -439,8 +439,8 @@
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.fldAgreementNum);
             this.Controls.Add(this.lblAgreementNum);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "formWordAutomatisationPart2";
+            this.Text = "Кручинин И Н вариант 6";
             ((System.ComponentModel.ISupportInitialize)(this.fldRentedFloor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

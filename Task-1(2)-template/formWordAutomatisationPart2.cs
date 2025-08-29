@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace Task_1_2__template
 {
-    public partial class Form1 : Form
+    public partial class formWordAutomatisationPart2 : Form
     {
         private string settingsFile = "settings.txt";
         private string[] parameters = new string[17];
-        public Form1()
+        public formWordAutomatisationPart2()
         {
             InitializeComponent();
             loadSettings();
