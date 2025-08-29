@@ -113,6 +113,7 @@
             // 
             // fldDate
             // 
+            this.fldDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fldDate.Location = new System.Drawing.Point(618, 72);
             this.fldDate.Name = "fldDate";
             this.fldDate.Size = new System.Drawing.Size(96, 22);
@@ -204,6 +205,7 @@
             // 
             // fldTenantPassportGiveDate
             // 
+            this.fldTenantPassportGiveDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fldTenantPassportGiveDate.Location = new System.Drawing.Point(570, 172);
             this.fldTenantPassportGiveDate.Name = "fldTenantPassportGiveDate";
             this.fldTenantPassportGiveDate.Size = new System.Drawing.Size(96, 22);
@@ -277,6 +279,7 @@
             // 
             // fldLandlordPassportGiveDate
             // 
+            this.fldLandlordPassportGiveDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fldLandlordPassportGiveDate.Location = new System.Drawing.Point(567, 296);
             this.fldLandlordPassportGiveDate.Name = "fldLandlordPassportGiveDate";
             this.fldLandlordPassportGiveDate.Size = new System.Drawing.Size(96, 22);
