@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace Task_1_2__template
 {
-    public partial class Form1 : Form
+    public partial class formWordAutomatisationPart2 : Form
     {
         private string settingsFile = "settings.txt";
         private string[] parameters = new string[17];
-        public Form1()
+        public formWordAutomatisationPart2()
         {
             InitializeComponent();
             loadSettings();
@@ -60,6 +55,7 @@ namespace Task_1_2__template
             if (parameters[12] != null) fldLandlordPassportGiveDate.Text = parameters[12];
             if (parameters[13] != null) fldLandlordAddress.Text = parameters[13];
             if (parameters[14] != null) fldRentedAddress.Text = parameters[14];
+            if (parameters[16] != null) fldDate.Text = parameters[16];
 
             // Для NumericUpDown (этаж) — проверка, что значение числовое
             if (parameters[15] != null && int.TryParse(parameters[15], out int floor))
@@ -148,14 +144,14 @@ namespace Task_1_2__template
             string tenantPassport = $"{parameters[3]} {parameters[4]}, выдан {parameters[5]} {parameters[6]}";
             string landlordPassport = $"{parameters[9]} {parameters[10]}, выдан {parameters[11]} {parameters[12]}";
 
-            range.InsertAfter($"Гражданин {parameters[2]}, паспорт (серия, номер, выдан)\n{tenantPassport},");
-            range.Paragraphs.Last.Alignment = Word.WdParagraphAlignment.wdAlignParagraphDistribute;
+            range.InsertAfter($"Гражданин {parameters[2]}, паспорт (серия, номер, выдан) {tenantPassport},");
+            range.Paragraphs.Last.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify;
             range.InsertParagraphAfter();
             range.InsertAfter($"проживающий по адресу {parameters[7]}, именуемый в дальнейшем «Наниматель», с одной стороны, и гражданин {parameters[8]}, паспорт (серия, номер, выдан) {landlordPassport},");
-            range.Paragraphs.Last.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+            range.Paragraphs.Last.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify;
             range.InsertParagraphAfter();
             range.InsertAfter($"проживающий по адресу {parameters[13]}, именуемый в дальнейшем «Наймодатель», с другой стороны, именуемые в дальнейшем «Стороны», заключили настоящий договор, в дальнейшем «Договор», о нижеследующем:");
-            range.Paragraphs.Last.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+            range.Paragraphs.Last.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify;
             range.InsertParagraphAfter();
             range.InsertParagraphAfter();
 
@@ -164,21 +160,22 @@ namespace Task_1_2__template
             Word.Paragraph sectionPara = range.Paragraphs.Last;
             sectionPara.Range.Font.Bold = -1;
             sectionPara.Range.Font.Size = 14;
-            sectionPara.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
+            sectionPara.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
             range.InsertParagraphAfter();
             range.InsertParagraphAfter();
 
             // === 1.1 ===
-            range.InsertAfter("1.1. Наймодатель обязуется предоставить Нанимателю квартиру, расположенную по адресу:");
-            range.InsertParagraphAfter();
-            range.InsertAfter(parameters[14]);
+            range.InsertAfter($"1.1. Наймодатель обязуется предоставить Нанимателю квартиру, расположенную по адресу: {parameters[14]}");
+            range.Paragraphs.Last.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify;
             range.InsertParagraphAfter();
             range.InsertAfter($"расположенную на {parameters[15]} этаже, в дальнейшем именуемую «Квартира», за плату во временное пользование для проживания.");
+            range.Paragraphs.Last.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify;
             range.InsertParagraphAfter();
             range.InsertParagraphAfter();
 
             // === 1.2 ===
             range.InsertAfter("1.2. Наймодатель распоряжается Квартирой по праву собственности, что подтверждается свидетельством о государственной регистрации права");
+            range.Paragraphs.Last.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify;
             range.InsertParagraphAfter();
             range.InsertParagraphAfter();
 

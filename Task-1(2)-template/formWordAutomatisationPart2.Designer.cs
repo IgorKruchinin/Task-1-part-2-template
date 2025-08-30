@@ -1,6 +1,6 @@
 ﻿namespace Task_1_2__template
 {
-    partial class Form1
+    partial class formWordAutomatisationPart2
     {
         /// <summary>
         /// Required designer variable.
@@ -113,6 +113,7 @@
             // 
             // fldDate
             // 
+            this.fldDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fldDate.Location = new System.Drawing.Point(618, 72);
             this.fldDate.Name = "fldDate";
             this.fldDate.Size = new System.Drawing.Size(96, 22);
@@ -204,6 +205,7 @@
             // 
             // fldTenantPassportGiveDate
             // 
+            this.fldTenantPassportGiveDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fldTenantPassportGiveDate.Location = new System.Drawing.Point(570, 172);
             this.fldTenantPassportGiveDate.Name = "fldTenantPassportGiveDate";
             this.fldTenantPassportGiveDate.Size = new System.Drawing.Size(96, 22);
@@ -277,6 +279,7 @@
             // 
             // fldLandlordPassportGiveDate
             // 
+            this.fldLandlordPassportGiveDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fldLandlordPassportGiveDate.Location = new System.Drawing.Point(567, 296);
             this.fldLandlordPassportGiveDate.Name = "fldLandlordPassportGiveDate";
             this.fldLandlordPassportGiveDate.Size = new System.Drawing.Size(96, 22);
@@ -392,7 +395,7 @@
             this.btnPreview.UseVisualStyleBackColor = true;
             this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
-            // Form1
+            // formWordAutomatisationPart2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -436,8 +439,8 @@
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.fldAgreementNum);
             this.Controls.Add(this.lblAgreementNum);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "formWordAutomatisationPart2";
+            this.Text = "Кручинин И Н вариант 6";
             ((System.ComponentModel.ISupportInitialize)(this.fldRentedFloor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
