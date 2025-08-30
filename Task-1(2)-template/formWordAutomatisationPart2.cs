@@ -55,6 +55,7 @@ namespace Task_1_2__template
             if (parameters[12] != null) fldLandlordPassportGiveDate.Text = parameters[12];
             if (parameters[13] != null) fldLandlordAddress.Text = parameters[13];
             if (parameters[14] != null) fldRentedAddress.Text = parameters[14];
+            if (parameters[16] != null) fldDate.Text = parameters[16];
 
             // Для NumericUpDown (этаж) — проверка, что значение числовое
             if (parameters[15] != null && int.TryParse(parameters[15], out int floor))
